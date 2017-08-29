@@ -10,3 +10,12 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+print 'What will we call this store?: '
+
+res = gets.chomp
+
+@store = Store.create(name: res)
+puts 'errors:'
+@store.errors.details[:annual_revenue].each do |d|
+  puts d[:error]
+end
